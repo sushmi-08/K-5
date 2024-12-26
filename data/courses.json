@@ -1,0 +1,151 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "name": "Mathematics",
+      "description": "A course on basic and advanced mathematics.",
+      "chapters": [
+        {
+          "id": "1",
+          "name": "Algebra",
+          "description": "Learn the fundamentals of algebra.",
+          "lessons": [
+            {
+              "id": "101",
+              "name": "Basics of Algebra",
+              "description": "Introduction to algebra.",
+              "xpPoints": 2,
+              "difficulty": "Easy"
+            },
+            {
+              "id": "102",
+              "name": "Advanced Algebra",
+              "description": "Learn about quadratic equations and beyond.",
+              "xpPoints": 3,
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Trigonometry",
+          "description": "Dive into the world of trigonometric equations.",
+          "lessons": [
+            {
+              "id": "103",
+              "name": "Basics of Trigonometry",
+              "description": "Understanding sine, cosine, and tangent.",
+              "xpPoints": 2,
+              "difficulty": "Easy"
+            },
+            {
+              "id": "104",
+              "name": "Trigonometric Equations",
+              "description": "Solving equations involving trigonometric functions.",
+              "xpPoints": 4,
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Physics",
+      "description": "Learn the basics of classical and modern physics.",
+      "chapters": [
+        {
+          "id": "3",
+          "name": "Mechanics",
+          "description": "Understand the laws of motion and forces.",
+          "lessons": [
+            {
+              "id": "201",
+              "name": "Newton's Laws",
+              "description": "An overview of Newton's laws of motion.",
+              "xpPoints": 3,
+              "difficulty": "Medium"
+            },
+            {
+              "id": "202",
+              "name": "Friction and Dynamics",
+              "description": "Study the effects of friction in motion.",
+              "xpPoints": 4,
+              "difficulty": "Hard"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "name": "Thermodynamics",
+          "description": "Explore heat and energy transfer.",
+          "lessons": [
+            {
+              "id": "203",
+              "name": "Heat Transfer",
+              "description": "Learn the basics of heat transfer mechanisms.",
+              "xpPoints": 3,
+              "difficulty": "Medium"
+            },
+            {
+              "id": "204",
+              "name": "Laws of Thermodynamics",
+              "description": "Explore the laws governing thermodynamics.",
+              "xpPoints": 4,
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Chemistry",
+      "description": "Explore the basics and advanced concepts of chemistry.",
+      "chapters": [
+        {
+          "id": "5",
+          "name": "Atomic Structure",
+          "description": "Learn about atoms, electrons, and the periodic table.",
+          "lessons": [
+            {
+              "id": "301",
+              "name": "Introduction to Atomic Structure",
+              "description": "Basics of atoms and their components.",
+              "xpPoints": 2,
+              "difficulty": "Easy"
+            },
+            {
+              "id": "302",
+              "name": "Periodic Table",
+              "description": "Understand the organization of elements.",
+              "xpPoints": 3,
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "name": "Chemical Reactions",
+          "description": "Dive into the world of chemical reactions and equations.",
+          "lessons": [
+            {
+              "id": "303",
+              "name": "Basics of Chemical Reactions",
+              "description": "Learn about reactants, products, and balancing equations.",
+              "xpPoints": 2,
+              "difficulty": "Easy"
+            },
+            {
+              "id": "304",
+              "name": "Types of Reactions",
+              "description": "Explore synthesis, decomposition, and other reaction types.",
+              "xpPoints": 4,
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

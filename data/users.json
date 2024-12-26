@@ -1,0 +1,236 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "1234",
+      "avatar": "https://static.vecteezy.com/system/resources/previews/014/388/556/non_2x/avatar-portrait-of-a-kid-child-caucasian-boy-in-round-blue-frame-illustration-in-cartoon-flat-style-vector.jpg",
+      "totalPoints": 0,
+      "lastViewedCourseId": 0,
+      "lastViewedChapterId": 0,
+      "courses": [
+        {
+          "id": "1",
+          "name": "Mathematics",
+          "isCompleted": false,
+          "progress": 0,
+          "chapters": [
+            {
+              "id": "1",
+              "name": "Algebra",
+              "isCompleted": false,
+              "progress": 0,
+              "lessons": [
+                {
+                  "id": "101",
+                  "name": "Basics of Algebra",
+                  "isCompleted": false,
+                  "xpPoints": 2,
+                  "difficulty": "Easy"
+                },
+                {
+                  "id": "102",
+                  "name": "Advanced Algebra",
+                  "isCompleted": false,
+                  "xpPoints": 3,
+                  "difficulty": "Medium"
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "name": "Trigonometry",
+              "isCompleted": false,
+              "progress": 0,
+              "lessons": [
+                {
+                  "id": "103",
+                  "name": "Basics of Trigonometry",
+                  "isCompleted": false,
+                  "xpPoints": 2,
+                  "difficulty": "Easy"
+                },
+                {
+                  "id": "104",
+                  "name": "Trigonometric Equations",
+                  "isCompleted": false,
+                  "xpPoints": 4,
+                  "difficulty": "Hard"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Physics",
+          "isCompleted": false,
+          "progress": 0,
+          "chapters": [
+            {
+              "id": "3",
+              "name": "Mechanics",
+              "isCompleted": false,
+              "progress": 0,
+              "lessons": [
+                {
+                  "id": "201",
+                  "name": "Newton's Laws",
+                  "isCompleted": false,
+                  "xpPoints": 3,
+                  "difficulty": "Medium"
+                },
+                {
+                  "id": "202",
+                  "name": "Friction and Dynamics",
+                  "isCompleted": false,
+                  "xpPoints": 4,
+                  "difficulty": "Hard"
+                }
+              ]
+            },
+            {
+              "id": "4",
+              "name": "Thermodynamics",
+              "isCompleted": false,
+              "progress": 0,
+              "lessons": [
+                {
+                  "id": "203",
+                  "name": "Heat Transfer",
+                  "isCompleted": false,
+                  "xpPoints": 3,
+                  "difficulty": "Medium"
+                },
+                {
+                  "id": "204",
+                  "name": "Laws of Thermodynamics",
+                  "isCompleted": false,
+                  "xpPoints": 4,
+                  "difficulty": "Hard"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "1234",
+      "avatar": "https://www.icon0.com/free/static2/preview2/stock-photo-little-girl-faces-children-avatar-people-icon-character-cartoon-32465.jpg",
+      "totalPoints": 0,
+      "lastViewedCourseId": 0,
+      "lastViewedChapterId": 0,
+      "courses": [
+        {
+          "id": "2",
+          "name": "Physics",
+          "isCompleted": false,
+          "progress": 0,
+          "chapters": [
+            {
+              "id": "3",
+              "name": "Mechanics",
+              "isCompleted": false,
+              "progress": 0,
+              "lessons": [
+                {
+                  "id": "201",
+                  "name": "Newton's Laws",
+                  "isCompleted": false,
+                  "xpPoints": 3,
+                  "difficulty": "Medium"
+                },
+                {
+                  "id": "202",
+                  "name": "Friction and Dynamics",
+                  "isCompleted": false,
+                  "xpPoints": 4,
+                  "difficulty": "Hard"
+                }
+              ]
+            },
+            {
+              "id": "4",
+              "name": "Thermodynamics",
+              "isCompleted": false,
+              "progress": 0,
+              "lessons": [
+                {
+                  "id": "203",
+                  "name": "Heat Transfer",
+                  "isCompleted": false,
+                  "xpPoints": 3,
+                  "difficulty": "Medium"
+                },
+                {
+                  "id": "204",
+                  "name": "Laws of Thermodynamics",
+                  "isCompleted": false,
+                  "xpPoints": 4,
+                  "difficulty": "Hard"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "Chemistry",
+          "isCompleted": false,
+          "progress": 0,
+          "chapters": [
+            {
+              "id": "5",
+              "name": "Atomic Structure",
+              "isCompleted": false,
+              "progress": 0,
+              "lessons": [
+                {
+                  "id": "301",
+                  "name": "Introduction to Atomic Structure",
+                  "isCompleted": false,
+                  "xpPoints": 2,
+                  "difficulty": "Easy"
+                },
+                {
+                  "id": "302",
+                  "name": "Periodic Table",
+                  "isCompleted": false,
+                  "xpPoints": 3,
+                  "difficulty": "Medium"
+                }
+              ]
+            },
+            {
+              "id": "6",
+              "name": "Chemical Reactions",
+              "isCompleted": false,
+              "progress": 0,
+              "lessons": [
+                {
+                  "id": "303",
+                  "name": "Basics of Chemical Reactions",
+                  "isCompleted": false,
+                  "xpPoints": 2,
+                  "difficulty": "Easy"
+                },
+                {
+                  "id": "304",
+                  "name": "Types of Reactions",
+                  "isCompleted": false,
+                  "xpPoints": 4,
+                  "difficulty": "Hard"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

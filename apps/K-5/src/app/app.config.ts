@@ -28,8 +28,8 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
     provideHttpClient(),
-    provideStore({auth: authReducer, course: courseReducer, chapter: chapterReducer, lesson: lessonReducer }, {metaReducers}),
-    provideEffects([AuthEffects, CourseEffects, ChapterEffects, LessonEffects]),
+    provideStore({auth: authReducer, lesson: lessonReducer }, {metaReducers}),
+    provideEffects([AuthEffects, LessonEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
 ],
 };

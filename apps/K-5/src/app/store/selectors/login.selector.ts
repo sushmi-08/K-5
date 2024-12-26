@@ -12,7 +12,7 @@ export const selectLastViewedChapterId = createSelector(
   (user) => user?.lastViewedChapterId
 );
 
-export const selectCompletedLessons = createSelector(
+export const selectLastViewedCourseId = createSelector(
   selectUser,
-  (user) => user?.completedLessons
+  (user) => user?.lastViewedCourseId
 );

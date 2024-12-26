@@ -32,8 +32,8 @@ export class LoginComponent {
     const { email, password } = this.userCredentials;
     this.store.dispatch(authActions.login({ email, password }));
     this.router.navigate(['/landing']);
-    this.store.dispatch(courseAction.loadCourses())
-    this.store.dispatch(chapterAction.loadChapters())
+    // this.store.dispatch(courseAction.loadCourses())
+    // this.store.dispatch(chapterAction.loadChapters())
   }
 
 }

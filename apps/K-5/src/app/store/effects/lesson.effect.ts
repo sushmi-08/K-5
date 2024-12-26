@@ -1,54 +1,30 @@
-import { catchError, map, of, switchMap } from 'rxjs';
+import { of } from 'rxjs';
+import { catchError, map, mergeMap } from 'rxjs/operators';
 
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-import { Lesson, User } from '../../models/models.component';
+import { UserService } from '../../services/user.service';
 import { lessonActions } from '../actions/lesson.action';
 
 @Injectable()
 export class LessonEffects {
-  constructor(private actions$: Actions, private http: HttpClient) {}
+  constructor(private actions$: Actions, private userService: UserService) {}
 
-  // Fetch lessons for a chapter
-  fetchLessons$ = createEffect(() =>
+  markLessonCompleted$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(lessonActions.fetchLessons),
-      switchMap(({ chapterId }) =>
-        this.http
-          .get<Lesson[]>(`http://localhost:3000/lessons?chapterId=${chapterId}`)
+      ofType(lessonActions.markLessonCompleted),
+      mergeMap(({ userId, courseId, chapterId, lessonId, lessonXpPoints }) =>
+        this.userService
+          .markLessonCompleted(userId, courseId, chapterId, lessonId, lessonXpPoints)
           .pipe(
-            map((lessons) => lessonActions.fetchLessonsSuccess({ lessons })),
-            catchError(() => of(lessonActions.fetchLessonsFailure({ error: 'Failed to fetch lessons' })))
+            map((updatedUser) => {
+              return lessonActions.markLessonCompletedSuccess({ updatedUser });
+            }),
+            catchError((err) =>
+              of(lessonActions.markLessonCompletedFailure({ error: err.message }))
+            )
           )
-      )
-    )
-  );
-
-  // Complete a lesson
-  completeLesson$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(lessonActions.completeLesson),
-      switchMap(({ userId, lessonId, points }) =>
-        this.http.get<User>(`http://localhost:3000/users/${userId}`).pipe(
-          switchMap((user) => {
-            const updatedUser = {
-              ...user,
-              totalPoints: user.totalPoints + points,
-              completedLessons: [...user.completedLessons, lessonId*1],
-            };
-
-            return this.http
-              .patch(`http://localhost:3000/users/${userId}`, updatedUser)
-              .pipe(
-                map(() => lessonActions.completeLessonSuccess({ user: updatedUser })),
-                catchError(() =>
-                  of(lessonActions.completeLessonFailure({ error: 'Failed to complete lesson' }))
-                )
-              );
-          })
-        )
       )
     )
   );
