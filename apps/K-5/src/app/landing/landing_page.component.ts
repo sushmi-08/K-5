@@ -9,11 +9,13 @@ import { CoursesComponent } from '../courses/courses.component';
 import { chapterSelector } from '../store/selectors/chapter.selector';
 import { authActions } from '../store/actions/login.action';
 import { userSelector } from '../store/selectors/login.selector';
+import { lessonActions } from '../store/actions/lesson.action';
+
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, CoursesComponent, RouterLink, MatExpansionModule],
+  imports: [CommonModule, MatButtonModule, CoursesComponent, RouterLink],
   templateUrl: './landing_page.component.html',
   styleUrl: './landing_page.component.css',
 })
@@ -66,12 +68,11 @@ export class LandingPageComponent implements OnInit{
     // console.log(this.chapterList)
   });
 
-  this.courseIdList = this.chapterList.filter((lists:any) => this.lastViewedChapter === lists.id)
+  this.courseIdList = this.chapterList.filter((lists:any) => this.lastViewedChapter == lists.id)
   // console.log(this.courseIdList[0].id);
   this.courseId = this.courseIdList[0].id
   this.router.navigate([`/courses/:${this.courseId}/chapters`]);
-
-
+  this.store.dispatch(lessonActions.fetchLessons({chapterId:+this.courseId }))
 
 }
 logOut() {
