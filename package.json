@@ -26,9 +26,10 @@
     "@ngrx/store-devtools": "^18.1.0",
     "@nx/angular": "19.5.0",
     "autoprefixer": "^10.4.20",
+    "bootstrap": "^5.3.3",
     "express": "~4.18.2",
-    "postcss": "^8.4.49",
     "json-server": "^1.0.0-beta.3",
+    "postcss": "^8.4.49",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

@@ -20,11 +20,12 @@ export class AuthEffects {
       ofType(authActions.login),
       switchMap(({ email, password }) =>
         this.http
-          .get<User[]>(`http://localhost:5000/users?email=${email}&password=${password}`)
+          .get<User[]>(`http://localhost:3000/users?email=${email}&password=${password}`)
           .pipe(
             map((users) => {
               if (users.length > 0) {
                 return authActions.loginSuccess({ user: users[0] });
+                console.log(users[0].name)
               } else {
                 return authActions.loginFailure({ error: 'Invalid credentials' });
               }

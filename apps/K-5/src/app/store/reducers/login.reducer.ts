@@ -6,6 +6,7 @@ import {
 	lastViewedChapterActions,
 	lastViewedCourseActions,
 } from '../actions/login.action';
+import { lessonActions } from '../actions/lesson.action';
 
 export interface AuthState {
   user: User | null;
@@ -39,6 +40,15 @@ export const authReducer = createReducer(
       : null,
   })),
   on(lastViewedCourseActions.updateLastViewedCourseFailure, (state, { error }) => ({
+    ...state,
+    error,
+  })),
+  on(lessonActions.markLessonCompletedSuccess, (state, { updatedUser }) => ({
+    ...state,
+    user: updatedUser,
+    error: null,
+  })),
+  on(lessonActions.markLessonCompletedFailure, (state, { error }) => ({
     ...state,
     error,
   }))

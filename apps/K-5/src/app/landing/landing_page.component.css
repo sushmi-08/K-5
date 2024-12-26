@@ -118,3 +118,14 @@ body {
   margin-left: 250px;
 }
 
+.white-tile {
+  background-color: white; /* White background */
+  padding: 20px; /* Space inside the tile */
+  margin: 20px; /* Space around the tile */
+  border-radius: 8px; /* Rounded corners for a smooth look */
+  border: 1px solid #ddd; /* Light gray border */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for a raised effect */
+  max-width: 400px; /* Optional: max width for the tile */
+  text-align: center; /* Optional: center the text */
+  margin-left: 83px;
+}

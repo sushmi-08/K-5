@@ -37,7 +37,7 @@ export class LandingPageComponent implements OnInit{
 
   ngOnInit(): void {
     this.store.select(userSelector).subscribe((authState) => {
-      // console.log(authState);
+      console.log(authState);
       this.userName = authState.user.name;
       this.points = authState.user.totalPoints;
       this.avatars = authState.user.avatar;
@@ -73,7 +73,7 @@ export class LandingPageComponent implements OnInit{
   // console.log(this.courseIdList[0].id);
   this.courseId = this.courseIdList[0].id
   this.router.navigate([`/courses/:${this.courseId}/chapters`]);
-  this.store.dispatch(lessonActions.fetchLessons({chapterId:+this.courseId }))
+  //this.store.dispatch(lessonActions.fetchLessons({chapterId:+this.courseId }))
 
 }
 logOut() {
