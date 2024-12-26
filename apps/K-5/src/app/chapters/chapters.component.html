@@ -18,12 +18,12 @@
         <div class=" flex flex-col gap-5">
           <div *ngFor="let lesson of lessons" (click)="selectLesson(lesson.id)"
                class="flex  bg-white items-center justify-between cursor-pointer p-4 rounded-lg border hover:bg-gray-100 transition-all"
-               [ngClass]="{'bg-green-500': this.user.completedLessons.includes(lesson.id)}">
+               [ngClass]="{'bg-green-500': this.user.completedLessons.includes(+lesson.id)}">
             <div class="flex items-center">
               <span class="cursor-pointer">
                 {{ lesson.name }}
               </span>
-              <span *ngIf="this.user.completedLessons.includes(lesson.id)" class="ml-2 text-green-500">✔️</span>
+              <span *ngIf="this.user.completedLessons.includes(+lesson.id)" class="ml-2 text-green-500">✔️</span>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@
               <p class="mt-4"> -{{ getSelectedLesson()?.description }}</p>
             </div>
            
-            <button *ngIf="!this.user.completedLessons.includes(this.selectedLessonId)" (click)="toggleCompletion(this.selectedLessonId)"  class="px-3 mt-5 py-2 bg-[#1f2354] text-white rounded-lg" > Mark as completed</button>
+            <button *ngIf="!this.user.completedLessons.includes(+this.selectedLessonId)" (click)="toggleCompletion(this.selectedLessonId)"  class="px-3 mt-5 py-2 bg-[#1f2354] text-white rounded-lg" > Mark as completed</button>
           </div>
           <ng-template #noSelection>
             <div class="text-center flex justify-center items-center">
