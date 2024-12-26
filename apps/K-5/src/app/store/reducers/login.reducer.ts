@@ -1,8 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
 
 import { User } from '../../models/models.component';
-import { lessonActions } from '../actions/lesson.action';
-import { authActions, lastViewedChapterActions } from '../actions/login.action';
+import {
+	authActions,
+	lastViewedChapterActions,
+	lastViewedCourseActions,
+} from '../actions/login.action';
 
 export interface AuthState {
   user: User | null;
@@ -29,6 +32,14 @@ export const authReducer = createReducer(
     ...state,
     error,
   })),
-  on(lessonActions.completeLessonSuccess, (state, { user }) => ({ ...state, user })),
-  on(lessonActions.completeLessonFailure, (state, { error }) => ({ ...state, error }))
+  on(lastViewedCourseActions.updateLastViewedCourseSuccess, (state, { lastViewedCourseId }) => ({
+    ...state,
+    user: state.user
+      ? { ...state.user, lastViewedCourseId }
+      : null,
+  })),
+  on(lastViewedCourseActions.updateLastViewedCourseFailure, (state, { error }) => ({
+    ...state,
+    error,
+  }))
 );

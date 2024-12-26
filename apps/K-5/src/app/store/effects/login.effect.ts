@@ -5,7 +5,11 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { User } from '../../models/models.component';
-import { authActions, lastViewedChapterActions } from '../actions/login.action';
+import {
+	authActions,
+	lastViewedChapterActions,
+	lastViewedCourseActions,
+} from '../actions/login.action';
 
 @Injectable()
 export class AuthEffects {
@@ -16,7 +20,7 @@ export class AuthEffects {
       ofType(authActions.login),
       switchMap(({ email, password }) =>
         this.http
-          .get<User[]>(`http://localhost:3000/users?email=${email}&password=${password}`)
+          .get<User[]>(`http://localhost:5000/users?email=${email}&password=${password}`)
           .pipe(
             map((users) => {
               if (users.length > 0) {
@@ -36,7 +40,7 @@ export class AuthEffects {
       ofType(lastViewedChapterActions.updateLastViewedChapter),
       switchMap(({ userId, lastViewedChapterId }) =>
         this.http
-          .patch(`http://localhost:3000/users/${userId}`, { lastViewedChapterId })
+          .patch(`http://localhost:5000/users/${userId}`, { lastViewedChapterId })
           .pipe(
             map(() =>
               lastViewedChapterActions.updateLastViewedChapterSuccess({ lastViewedChapterId })
@@ -45,6 +49,28 @@ export class AuthEffects {
               of(
                 lastViewedChapterActions.updateLastViewedChapterFailure({
                   error: 'Failed to update last viewed chapter',
+                })
+              )
+            )
+          )
+      )
+    )
+  );
+
+  updateLastViewedCourse$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(lastViewedCourseActions.updateLastViewedCourse),
+      switchMap(({ userId, lastViewedCourseId }) =>
+        this.http
+          .patch(`http://localhost:5000/users/${userId}`, { lastViewedCourseId })
+          .pipe(
+            map(() =>
+              lastViewedCourseActions.updateLastViewedCourseSuccess({ lastViewedCourseId })
+            ),
+            catchError(() =>
+              of(
+                lastViewedCourseActions.updateLastViewedCourseFailure({
+                  error: 'Failed to update last viewed course',
                 })
               )
             )

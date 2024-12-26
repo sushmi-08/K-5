@@ -21,4 +21,14 @@ export const lastViewedChapterActions = createActionGroup({
   },
 });
 
-// this.store.dispatch(lastViewedChapterActions.updateLastViewedChapter({userId: , lastViewedChpaterId: }))
+export const lastViewedCourseActions = createActionGroup({
+  source: 'Last Course Viewed API',
+  events: {
+    'Update Last Viewed Course': props<{ userId: number; lastViewedCourseId: number }>(),
+    'Update Last Viewed Course Success': props<{ lastViewedCourseId: number }>(),
+    'Update Last Viewed Course Failure': props<{ error: string }>(),
+  },
+});
+
+// this.store.dispatch(lastViewedChapterActions.updateLastViewedChapter({userId: , lastViewedChapterId: }))
+// this.store.dispatch(lastViewedCourseActions.updateLastViewedCourse({userId: , lastViewedCourseId: }))

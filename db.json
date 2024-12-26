@@ -6,12 +6,9 @@
       "email": "john.doe@example.com",
       "password": "1234",
       "avatar": "https://static.vecteezy.com/system/resources/previews/014/388/556/non_2x/avatar-portrait-of-a-kid-child-caucasian-boy-in-round-blue-frame-illustration-in-cartoon-flat-style-vector.jpg",
-      "totalPoints": 5,
-      "completedLessons": [
-        101,
-        102
-      ],
-      "lastViewedChapterId": 1,
+      "totalPoints": 0,
+      "completedLessons": [],
+      "lastViewedChapterId": 0,
       "progress": {
         "courseId": 1,
         "percentage": 50

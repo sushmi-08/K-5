@@ -1,20 +1,27 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { Lesson } from '../../models/models.component';
+import { User } from '../../models/models.component';
 import { lessonActions } from '../actions/lesson.action';
 
 export interface LessonState {
-  lessons: Lesson[];
+  user: User | null;
   error: string | null;
 }
 
-const initialLessonState: LessonState = {
-  lessons: [],
+export const initialState: LessonState = {
+  user: null,
   error: null,
 };
 
 export const lessonReducer = createReducer(
-  initialLessonState,
-  on(lessonActions.fetchLessonsSuccess, (state, { lessons }) => ({ ...state, lessons })),
-  on(lessonActions.fetchLessonsFailure, (state, { error }) => ({ ...state, error }))
+  initialState,
+  on(lessonActions.markLessonCompletedSuccess, (state, { updatedUser }) => ({
+    ...state,
+    user: updatedUser,
+    error: null,
+  })),
+  on(lessonActions.markLessonCompletedFailure, (state, { error }) => ({
+    ...state,
+    error,
+  }))
 );

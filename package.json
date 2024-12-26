@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "api": "json-server --watch db.json --port 3000"
+    "api": "json-server --watch db.json --port 3000",
+    "courseAPI": "json-server --watch ./data/courses.json --port 3000",
+    "userAPI": "json-server --watch ./data/users.json --port 5000"
   },
   "private": true,
   "dependencies": {
