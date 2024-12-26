@@ -25,20 +25,20 @@ export class CoursesComponent implements OnInit {
 
 courses?:Course[]=[]
 chapters?:any=[]
-user:User ={
-  id: 0,
-  name: '',
-  email: '',
-  password: '',
-  avatar: '',
-  totalPoints: 0,
-  completedLessons: [],
-  lastViewedChapterId: 0,
-  progress:{
-    courseId: 0,
-    percentage: 0
-  }
-}
+// user:User ={
+//   id: 0,
+//   name: '',
+//   email: '',
+//   password: '',
+//   avatar: '',
+//   totalPoints: 0,
+//   completedLessons: [],
+//   lastViewedChapterId: 0,
+//   progress:{
+//     courseId: 0,
+//     percentage: 0
+//   }
+//}
   constructor(private router:Router,private store:Store) {
 
   }
@@ -55,7 +55,7 @@ user:User ={
     })
     this.store.select(selectUser).subscribe(data=>{
 
-      this.user=data
+      //this.user=data
     })
 
 
@@ -85,8 +85,8 @@ user:User ={
   navigateChapterpage(id:string){
     this.router.navigate([`courses/:${id}/chapters`])
     console.log(this.router.url)
-    this.store.dispatch(lessonActions.fetchLessons({chapterId:+id }))
-    this.store.dispatch(lastViewedChapterActions.updateLastViewedChapter({userId:this.user.id , lastViewedChapterId:+id }))
+    //this.store.dispatch(lessonActions.fetchLessons({chapterId:+id }))
+    //this.store.dispatch(lastViewedChapterActions.updateLastViewedChapter({userId:this.user.id , lastViewedChapterId:+id }))
   }
 
 }

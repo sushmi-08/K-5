@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -16,12 +16,27 @@ import { userSelector } from '../store/selectors/login.selector';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+
+  userName!: any;
+  points!: any;
+  avatars!: any;
   constructor(private store: Store, private router: Router) {}
 
   userCredentials: any = {
     email: '',
     password: ''
+  }
+
+  ngOnInit(): void {
+    this.store.select(userSelector).subscribe((authState) => {
+      console.log(authState);
+      this.userName = authState.user.name;
+      this.points = authState.user.totalPoints;
+      this.avatars = authState.user.avatar;
+      // console.log(this.avatars);
+
+        });
   }
 
   isFormValid(): boolean {
@@ -31,6 +46,10 @@ export class LoginComponent {
   onSubmit() {
     const { email, password } = this.userCredentials;
     this.store.dispatch(authActions.login({ email, password }));
+    this.store.select(userSelector).subscribe((authState) => {
+      console.log(authState);});
+    //console.log(authActions.login);
+
     this.router.navigate(['/landing']);
     // this.store.dispatch(courseAction.loadCourses())
     // this.store.dispatch(chapterAction.loadChapters())

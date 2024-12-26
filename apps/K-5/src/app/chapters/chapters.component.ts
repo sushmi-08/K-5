@@ -8,7 +8,7 @@ import { Store } from '@ngrx/store';
 import { Chapter, Course, Lesson, User } from '../models/models.component';
 import { chapterSelector } from '../store/selectors/chapter.selector';
 import { lessonActions } from '../store/actions/lesson.action';
-import { selectLessons } from '../store/selectors/lesson.selector';
+//import { selectLessons } from '../store/selectors/lesson.selector';
 import { selectUser } from '../store/selectors/login.selector';
 
 // import { completeLesson, selectCourse } from '../store/actions';
@@ -28,20 +28,20 @@ export class ChaptersComponent implements OnInit{
 lessons:Lesson[]=[]
 selectedLessonId = 0
 selectedChapterId=0
-user:User={
-   id: 0,
-   name: '',
-   email: '',
-   password: '',
-   avatar: '',
-   totalPoints: 0,
-   completedLessons: [],
-   lastViewedChapterId: 0,
-   progress: {
-     courseId: 0,
-     percentage: 0
-   }
- }
+// user:User={
+//    id: 0,
+//    name: '',
+//    email: '',
+//    password: '',
+//    avatar: '',
+//    totalPoints: 0,
+//    completedLessons: [],
+//    lastViewedChapterId: 0,
+//    progress: {
+//      courseId: 0,
+//      percentage: 0
+//    }
+//  }
 
   constructor(private store: Store, private route: ActivatedRoute){}
 
@@ -52,22 +52,22 @@ user:User={
     });
     this.store.select(selectUser).subscribe(data=>{
      
-      this.user=data
+      //this.user=data
     })
     console.log("chapters")
-    this.store.select(selectLessons).subscribe(data=>{
+    // this.store.select(selectLessons).subscribe(data=>{
      
-      this.lessons=data
-    })
+    //   this.lessons=data
+    // })
     
 
   }
   toggleCompletion(lessonId: number): void {
-    const lesson = this.lessons.find((lesson) => lesson.id === lessonId);
-    console.log(lesson)
-    if (lesson) {
-      this.store.dispatch(lessonActions.completeLesson({ userId:this.user.id , lessonId:lessonId , points:lesson.xpPoints }))
-    }
+    // const lesson = this.lessons.find((lesson) => lesson.id === lessonId);
+    // console.log(lesson)
+    // if (lesson) {
+    //   this.store.dispatch(lessonActions.completeLesson({ userId:this.user.id , lessonId:lessonId , points:lesson.xpPoints }))
+    // }
     // this.user.completedLessons.push(lessonId)
    
   }
@@ -83,9 +83,9 @@ user:User={
 
 
 
-  getSelectedLesson(){
-    return this.lessons.find(lesson => lesson.id === this.selectedLessonId);
-  }
+  // getSelectedLesson(){
+  //   return this.lessons.find(lesson => lesson.id === this.selectedLessonId);
+  // }
 
 
 }
